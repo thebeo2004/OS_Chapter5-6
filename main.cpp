@@ -3,6 +3,7 @@
 #include "FIFO.h"
 #include "LRU.h"
 #include "LFU.h"
+#include "MFU.h"
 
 using namespace std;
 
@@ -20,13 +21,22 @@ void solve() {
 
     get_references();
 
+    //Number of frames
     int frames = 3;
 
     // Optimal_Algorithm(seq_references, frames);
+
+    //First In First Out
     // FIFO_Algorithm(seq_references, frames);
+
+    //Least Recently Used
     // LRU_Algorithm(seq_references, frames);
+
+    //Least Frequently Used
     // LFU_Algorithm(seq_references, frames);
 
+    //Most Frequently Used
+    // MFU_Algorithm(seq_references, frames);
 }
 
 int main() {
