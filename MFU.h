@@ -22,7 +22,7 @@ int MFU_find_victim(vector<int> count) {
 void MFU_Algorithm(vector<int> seq_references, int frames) {
     int page_fault = 0;
 
-    vector<int> MEM, count;
+    vector<int> MEM, count, page_faults;
 
     cout << "Page Replacement: ";
 
@@ -34,6 +34,7 @@ void MFU_Algorithm(vector<int> seq_references, int frames) {
             count[check_existence(MEM, ref)] += 1;
         } else {
             page_fault += 1;
+            page_faults.push_back(ref);
 
             if (MEM.size() < frames) {
                 MEM.push_back(ref);
@@ -52,6 +53,7 @@ void MFU_Algorithm(vector<int> seq_references, int frames) {
         }
     }
 
-    cout << "\nPage Faults: " << page_fault;
+    pagefaults_display(page_faults);
+    cout << "Page Faults: " << page_fault;
     cout << "\nHits: " << seq_references.size() - page_fault;
 }

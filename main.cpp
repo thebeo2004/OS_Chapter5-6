@@ -30,7 +30,7 @@ void solve() {
     // FIFO_Algorithm(seq_references, frames);
 
     //Least Recently Used
-    // LRU_Algorithm(seq_references, frames);
+    LRU_Algorithm(seq_references, frames);
 
     //Least Frequently Used
     // LFU_Algorithm(seq_references, frames);

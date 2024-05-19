@@ -41,7 +41,7 @@ void Optimal_Algorithm(vector<int> seq_references, int frames) {
 
         int page_fault = 0;
 
-        vector<int> MEM, page_replacement;
+        vector<int> MEM, page_replacement, page_faults;
 
         cout << "Page Replacement: ";
 
@@ -55,6 +55,8 @@ void Optimal_Algorithm(vector<int> seq_references, int frames) {
                 // continue;
             } else {
                 page_fault += 1;
+
+                page_faults.push_back(ref);
 
                 if (MEM.size() < frames) {
                     MEM.push_back(ref);
@@ -77,6 +79,7 @@ void Optimal_Algorithm(vector<int> seq_references, int frames) {
             // cout << "\n";
         }
 
-        cout << "\nPage Faults: " << page_fault;
+        pagefaults_display(page_faults);
+        cout << "Page Faults: " << page_fault;
         cout << "\nHits: " << seq_references.size() - page_fault;
 }

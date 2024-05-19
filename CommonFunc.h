@@ -19,3 +19,12 @@ int check_existence(vector<int> v, int value) {
 
     return -1;
 }
+
+void pagefaults_display(vector<int> v) {
+    cout << "\nPage Faults: ";
+
+    for (auto i : v) {
+        cout << i << " ";
+    }
+    cout << "\n";
+}

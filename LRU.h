@@ -20,7 +20,7 @@ int find_victim(vector<int> timer, int offset) {
 void LRU_Algorithm(vector<int> seq_references, int frames) {
     int page_fault = 0;
 
-    vector<int> MEM, timer;
+    vector<int> MEM, timer, page_faults;
 
     cout << "Page Replacement: ";
 
@@ -31,6 +31,7 @@ void LRU_Algorithm(vector<int> seq_references, int frames) {
             timer[check_existence(MEM, ref)] = i;
         } else {
             page_fault += 1;
+            page_faults.push_back(ref);
 
             if (MEM.size() < frames) {
                 MEM.push_back(ref);
@@ -50,6 +51,7 @@ void LRU_Algorithm(vector<int> seq_references, int frames) {
         }
     }
 
-    cout << "\nPage Faults: " << page_fault;
+    pagefaults_display(page_faults);
+    cout << "Page Faults: " << page_fault;
     cout << "\nHits: " << seq_references.size() - page_fault;
 }
