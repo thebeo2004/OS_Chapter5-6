@@ -2,8 +2,6 @@
 
 #include "CommonFunc.h"
 
-
-
 int find_victim(vector<int> count) {
 
     int MIN = INF;
