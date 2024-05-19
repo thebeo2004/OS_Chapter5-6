@@ -67,7 +67,7 @@ void solve() {
 
     //Second Chance Algorithm
     int pointer = 1;
-    // SecondChance_Algorithm(seq_references, frames, pointer);
+    SecondChance_Algorithm(seq_references, frames, pointer);
 
     // int delta = 10;
     // int index = 20;
